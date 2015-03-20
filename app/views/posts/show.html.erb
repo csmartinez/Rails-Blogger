@@ -3,3 +3,6 @@
 <h4><%= @post.body %></h4>
 
 <p><button class="btn btn-xs btn-default"><%= link_to "Edit Post", edit_post_path(@post) %></button></p>
+<p><button class="btn btn-xs btn-default"><%= link_to "Delete", post_path(@post),
+                         :data => {:confirm => "You sure?",
+                                        :method => "delete"} %></button></p>
