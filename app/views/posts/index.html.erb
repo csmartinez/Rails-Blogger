@@ -1,0 +1,8 @@
+<h1>Derailed Blogger</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <h3><%= post.title %><small> By <%= post.author %></h3>
+    <p><%= post.body %></p>
+  <% end %>
+</ul>

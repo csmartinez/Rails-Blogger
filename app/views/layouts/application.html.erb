@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="container">
+  <button class="btn btn-default btn-xs"><%= link_to 'Home', "/" %></button>
 <%= yield %>
-
+</div>
 </body>
 </html>
