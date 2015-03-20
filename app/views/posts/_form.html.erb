@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @post %>
+
+<%= form_for @post do |f| %>
+  <h3><%= f.label :title %>:</h3>
+  <%= f.text_field :title %>
+  <h3><%= f.label :author %>:</h3>
+  <%= f.text_field :author %>
+  <h3><%= f.label :body %></h3>
+  <%= f.text_area(:body, size: '80x10') %><br><br>
+  <button class="btn btn-primary">New Post</button>
+<% end %>

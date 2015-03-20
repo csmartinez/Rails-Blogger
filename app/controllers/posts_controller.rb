@@ -22,4 +22,18 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @post = Post.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @post= Post.find(params[:id])
+    if @post.update(params[:list])
+      redirect_to posts_path
+    else
+      render :edit
+    end
+  end
 end

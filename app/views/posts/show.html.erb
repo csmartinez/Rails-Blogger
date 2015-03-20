@@ -1,3 +1,5 @@
 <h1><%= @post.title %> <small>by <%= @post.author %> <p class="smallish"><%= @post.created_at %></p></small></h1>
 
 <h4><%= @post.body %></h4>
+
+<p><button class="btn btn-xs btn-default"><%= link_to "Edit Post", edit_post_path(@post) %></button></p>
