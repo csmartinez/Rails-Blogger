@@ -8,8 +8,17 @@
 </head>
 <body>
 <div class="container">
-  <button class="btn btn-default btn-xs"><%= link_to 'Home', "/posts" %></button>
-  <button class="btn btn-default btn-xs"><%= link_to 'New Post', "/posts/new" %></button>
+  <div class="nav">
+      <nav class="main-nav">
+        <ul class="list-unstyled">
+          <button class="btn btn-primary btn-xs"><%= link_to 'Home', "/" %></button>
+          <button class="btn btn-primary btn-xs"><%= link_to 'New Post', "/posts/new" %></button>
+        </ul>
+      </nav>
+    </div>
+  <h5><%= flash[:alert] %></h5>
+  <h5><%= flash[:notice] %></h5>
+
 <%= yield %>
 </div>
 </body>

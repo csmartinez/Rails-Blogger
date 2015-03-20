@@ -1,3 +1,40 @@
 .smallish {
   font-size: 15pt;
 }
+
+.main-nav li {
+  display: inline;
+  margin-right: 1em;
+}
+
+.posts a:visited {
+  color: yellow;
+}
+
+a:visited {
+  color: white;
+}
+
+.posts a:hover {
+  color: white;
+}
+
+.nav-right {
+  float: right;
+}
+
+.column {
+  float: right;
+  padding: 5px 10px;
+  margin-right: 15px;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+body {
+  /*background-image: url("http://3.bp.blogspot.com/_FH24fl5-Tds/S9WeRimNvcI/AAAAAAAAABM/o43XiMIhHiQ/s1600/triangle_grey.jpg");
+  background-size: cover;*/
+  background-color: grey;
+}

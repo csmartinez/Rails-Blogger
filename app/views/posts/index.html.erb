@@ -1,7 +1,7 @@
 <h1>Derailed Blogger</h1>
 
-<ul>
-  <% @posts.each do |post| %>
-    <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
-  <% end %>
-</ul>
+<div class="posts">
+    <% @posts.each do |post| %>
+      <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
+    <% end %>
+</div>
