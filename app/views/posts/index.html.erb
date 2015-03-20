@@ -2,7 +2,6 @@
 
 <ul>
   <% @posts.each do |post| %>
-    <h3><%= post.title %><small> By <%= post.author %></h3>
-    <p><%= post.body %></p>
+    <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
   <% end %>
 </ul>
