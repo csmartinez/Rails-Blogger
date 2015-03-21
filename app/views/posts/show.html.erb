@@ -6,3 +6,20 @@
 <p><button class="btn btn-xs btn-primary"><%= link_to "Delete", post_path(@post),
                          :data => {:confirm => "You sure?",
                                         :method => "delete"} %></button></p>
+<% if @post.comments.any? %>
+  <h4>Comments</h4>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <% end %>
+      </ul>
+    <% else %>
+  <p>There are no comments yet!</p>
+<% end %>
+
+<%= form_for [@post.comments.new] do |f| %>
+  <%= f.label :comment %>
+  <%= f.text_field :comment %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,28 +1,29 @@
-== README
+##Blogger
+Ruby/Rails App to add posts with a title, author and body. Edit and delete posts.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Bugs
+Comment function not currently working.
 
-Things you may want to cover:
+Ruby version 2.2
+Rails 4.2.1
 
-* Ruby version
+##Project Setup
 
-* System dependencies
+1. `rake db:migrate`
+2. rails s
+8. go to localhost:3000 in web browser
 
-* Configuration
+##Tests
+No integration tests yet.
+tests for ruby methods can be run using the rspec gem
 
-* Database creation
+`gem install rspec`
+`rspec`
 
-* Database initialization
+##Motivation
 
-* How to run the test suite
+To practice Rails- RESTful routes and asset pipeline.
 
-* Services (job queues, cache servers, search engines, etc.)
+##License
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT License. Copyright 2015. Created by Carli Martinez
