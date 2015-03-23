@@ -1,25 +1,28 @@
-<h1><%= @post.title %> <small>by <%= @post.author %> <p class="smallish"><%= @post.created_at %></p></small></h1>
+<div class="left">
+  <h1><%= @post.title %> <small>by <%= @post.author %> <p class="smallish"><%= @post.created_at %></p></small></h1>
 
-<h4><%= @post.body %></h4>
+  <h4><%= @post.body %></h4>
 
-<p><button class="btn btn-xs btn-primary"><%= link_to "Edit Post", edit_post_path(@post) %></button></p>
-<p><button class="btn btn-xs btn-primary"><%= link_to "Delete", post_path(@post),
-                         :data => {:confirm => "You sure?",
-                                        :method => "delete"} %></button></p>
-<% if @post.comments.any? %>
-  <h4>Comments</h4>
-    <ul>
-      <% @post.comments.each do |comment| %>
-        <% end %>
-      </ul>
-    <% else %>
-  <p>There are no comments yet!</p>
-<% end %>
-
-<%= form_for [@post.comments.new] do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
-  <p><%= f.submit %></p>
-<% end %>
+  <p><button class="btn btn-xs btn-primary"><span class="link"><%= link_to "Edit Post", edit_post_path(@post) %></span></button></p>
+  <p><button class="btn btn-xs btn-primary"><%= link_to "Delete", post_path(@post),
+                           :data => {:confirm => "You sure?",
+                                          :method => "delete"} %></button></p>
+</div>
+<div class="column">
+  <% if @post.comments.any? %>
+    <h3>Comments</h3>
+        <% @post.comments.each do |comment| %>
+          <h5><strong>"<%= comment.comment %>"</strong></h5>
+            <em>-<%= comment.author %></em><br>
+          <% end %>
+      <% else %>
+    <p>There are no comments yet!</p>
+  <% end %>
+  <h3>New Comment</h3>
+  <%= form_for @post.comments.new do |f| %>
+    <%= f.text_area(:comment, size: '23x2', placeholder: "Enter text here...", autofocus: true) %><br>
+    <%= f.text_area(:author, placeholder: "Your name", size: '23x1', autofocus: true) %><br>
+    <input id='post_id' name='post_id' type='hidden' value='<%= @post.id() %>'>
+    <button class="btn btn-xs btn-primary">Enter comment</button>
+  <% end %>
+</div>

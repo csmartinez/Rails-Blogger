@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = @post.comments.new
     render :show
   end
 
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.new
     @post = Post.new(params[:post])
     if @post.save
       flash[:notice] = "Post successfully added!"
