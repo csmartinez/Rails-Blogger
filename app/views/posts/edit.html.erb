@@ -1,7 +1,7 @@
 <h1>Edit post</h1>
 
 <% if @post.errors.any? %>
-  <h3>Please fix these errors:</h3>
+  <h4>Please fix these errors:</h4>
   <ul>
     <% @post.errors.full_messages.each do |message| %>
       <li><%= message %></li>
