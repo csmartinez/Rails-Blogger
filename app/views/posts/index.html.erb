@@ -1,8 +1,39 @@
+<div class="stuff">
+  <div class="left">
+    <div class="posts">
+      <h2>Recent Posts</h2>
+        <% @posts.each do |post| %>
+          <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
+        <% end %>
+    </div>
+  </div>
 
-  <h1>Derailed Blogger</h1>
+    <div class="column">
+      <% if current_user %>
+      <h2>Derailed Users</h2>
+          <% User.all.each do |user| %>
+            <% if user == current_user %>
+              <h5 class="highlight"><%= current_user.email %></h5>
+              <% else %>
+              <h5><%= user.email %></h5>
+              <% end %>
+            <% end %>
+          <% else %>
 
-  <div class="posts">
-      <% @posts.each do |post| %>
-        <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
+        <h1>Log In</h1>
+        <%=form_tag log_in_path do %>
+          <h5><%=text_field_tag :email, nil, placeholder: " Email", size: '22x1' %></h5>
+          <h5><%=password_field_tag :password, nil, placeholder: " Password", size: '22x1' %></h5>
+          <button class="btn btn-xs btn-info">Log in</button>
+          <% end %>
+
+        <h1>Sign Up Now!</h1>
+        <%=form_for User.new do |f| %>
+        <h5><%= f.text_field(:email, placeholder: " Email", size: '23x1',) %></h5>
+        <h5><%= f.password_field(:password, size: '22x1', placeholder: " Password") %></h5>
+        <h5><%= f.password_field(:password_confirmation, size: '22x1', placeholder: " Password Confirmation") %></h5>
+        <button class="btn btn-xs btn-primary">Sign Up</button>
+        <% end %>
       <% end %>
   </div>
+</div>

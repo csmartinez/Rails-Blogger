@@ -1,17 +1,16 @@
 ##Blogger
-Ruby/Rails App to add posts with a title, author and body. Edit and delete posts.
+Ruby/Rails App to add posts with a title, author and body. Edit and delete posts. Comment on posts.
 
-##Bugs
-Comment function not currently working.
 
 Ruby version 2.2
 Rails 4.2.1
 
 ##Project Setup
 
-1. `rake db:migrate`
-2. rails s
-8. go to localhost:3000 in web browser
+1. `rake db:create`
+2. `rake db:migrate`
+3. rails s
+4. go to localhost:3000 in web browser
 
 ##Tests
 No integration tests yet.

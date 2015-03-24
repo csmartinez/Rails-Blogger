@@ -1,28 +1,26 @@
-<div class="left">
+<div class="left2">
   <h1><%= @post.title %> <small>by <%= @post.author %> <p class="smallish"><%= @post.created_at %></p></small></h1>
 
   <h4><%= @post.body %></h4>
 
   <p><button class="btn btn-xs btn-primary"><span class="link"><%= link_to "Edit Post", edit_post_path(@post) %></span></button></p>
-  <p><button class="btn btn-xs btn-primary"><%= link_to "Delete", post_path(@post),
+  <p><button class="btn btn-xs btn-danger"><%= link_to "Delete", post_path(@post),
                            :data => {:confirm => "You sure?",
                                           :method => "delete"} %></button></p>
 </div>
-<div class="column">
+<div class="column2">
   <% if @post.comments.any? %>
     <h3>Comments</h3>
         <% @post.comments.each do |comment| %>
           <h5><strong>"<%= comment.comment %>"</strong></h5>
             <em>-<%= comment.author %></em><br>
           <% end %>
-      <% else %>
-    <p>There are no comments yet!</p>
-  <% end %>
+        <% end %>
   <h3>New Comment</h3>
   <%= form_for @post.comments.new do |f| %>
-    <%= f.text_area(:comment, size: '23x2', placeholder: "Enter text here...", autofocus: true) %><br>
-    <%= f.text_area(:author, placeholder: "Your name", size: '23x1', autofocus: true) %><br>
+    <h5><%= f.text_field(:comment, size: '23x2', placeholder: " Enter text here...") %></h5>
+    <h5><%= f.text_field(:author, placeholder: " Your name", size: '20x1') %></h5>
     <input id='post_id' name='post_id' type='hidden' value='<%= @post.id() %>'>
-    <button class="btn btn-xs btn-primary">Enter comment</button>
+    <button class="btn btn-xs btn-warning">Enter comment</button>
   <% end %>
 </div>

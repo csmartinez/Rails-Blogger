@@ -1,3 +1,4 @@
+
 .smallish {
   font-size: 15pt;
 }
@@ -8,11 +9,11 @@
 }
 
 .posts a:hover {
-  color: white;
+  color: grey;
 }
 
 .posts a {
-  color: yellow;
+  color: teal;
 }
 
 .nav-right {
@@ -20,19 +21,57 @@
 }
 
 .home h3 {
-  color: yellow;
+  color: teal;
+}
+
+.left {
+  float: left;
+  width: 60%;
+  height: 100%;
+  padding: 10px;
+  border: 7px solid darkgrey;
+  border-radius: 25px;
+  background: white;
 }
 
 .column {
   float: right;
-  padding: 5px 10px;
+  padding: 8px 10px;
   margin-right: 10px;
-  text-align: right;
   width: 38%;
+  padding: 10px;
+  border: 7px solid darkgrey;
+  border-radius: 25px;
+  background: white;
+}
+
+.left2 {
+  float: right;
+  padding: 8px 10px;
+  margin-right: 10px;
+  width: 64%;
+  padding: 10px;
+  border: 7px solid darkgrey;
+  border-radius: 25px;
+  background: white;
+}
+
+.column2 {
+  float: left;
+  width: 34%;
+  height: 100%;
+  padding: 10px;
+  border: 7px solid darkgrey;
+  border-radius: 25px;
+  background: white;
 }
 
 .nav {
   margin-top: 10px;
+}
+
+.nav ul {
+  display: inline;
 }
 
 body {
@@ -41,10 +80,43 @@ body {
   background-color: grey;
 }
 
-.left {
-  float:left;
-  width: 60%;
+.stuff {
+
 }
+
+
 button a {
   color:white;
+}
+.nav-rights {
+  float: right;
+  margin-right: 350px;
+  margin-top: 3px;
+  display: inline;
+}
+
+input {
+  border-radius: 25px;
+  border: 2px solid;
+  border-color: black;
+}
+
+.column h1 {
+  margin-right: 5px;
+}
+
+.nav {
+  background: white;
+  padding: 10px;
+  border: 7px solid darkgrey;
+  border-radius: 25px;
+}
+
+.arial {
+  font-family: arial;
+}
+
+.highlight {
+  color: teal;
+  font-family: arial;
 }
