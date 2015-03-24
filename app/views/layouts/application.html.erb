@@ -14,11 +14,11 @@
           <div class="nav-rights">
             <% if current_user %>
             <p class="arial"><strong>Welcome, <%= current_user.email%></strong>!
-            <button class="btn btn-info btn-xs"><%= link_to 'New Post', "/posts/new" %></button>
+            <button class="btn btn-primary btn-xs"><%= link_to 'New Post', "/posts/new" %></button>
             <button class="btn btn-danger btn-xs"><%= link_to 'Logout', log_out_path(@user) %></button></p>
           </div>
           <% end %>
-          <h1>Derailed Blogger</h1>
+          <h1>Derailed Blogger<small> share your lyfe with dRailed bl0gger</small></h1>
       </nav>
     </div>
   <h5><%= flash[:alert] %></h5>
