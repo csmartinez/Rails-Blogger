@@ -80,8 +80,8 @@ body {
   background-color: grey;
 }
 
-.stuff {
-
+a:hover {
+  color: white;
 }
 
 
@@ -98,7 +98,7 @@ button a {
 input {
   border-radius: 25px;
   border: 2px solid;
-  border-color: black;
+  border-color: darkgrey;
 }
 
 .column h1 {

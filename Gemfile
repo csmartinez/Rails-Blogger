@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
@@ -26,3 +27,5 @@ end
 group :test do
   gem 'shoulda-matchers'
 end
+
+ruby "2.2.0"
