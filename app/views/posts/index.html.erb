@@ -1,9 +1,13 @@
 <div class="stuff">
   <div class="left">
     <div class="posts">
+      <% if @posts.any? %>
       <h2>Recent Posts</h2>
         <% @posts.each do |post| %>
           <h3><%= link_to post.title, post_path(post) %> <small> by <%= post.author %></small></h3>
+        <% end %>
+        <% else %>
+        <h2>No posts yet</h2>
         <% end %>
     </div>
   </div>
@@ -13,7 +17,7 @@
       <h2>Derailed Users</h2>
           <% User.all.each do |user| %>
             <% if user == current_user %>
-              <h5 class="highlight"><%= current_user.email %> (signed in)</h5>
+              <h5 class="highlight"><%= current_user.email %> (you)</h5>
               <% else %>
               <h5><%= user.email %></h5>
               <% end %>
