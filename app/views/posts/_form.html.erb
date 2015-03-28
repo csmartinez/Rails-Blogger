@@ -5,11 +5,11 @@
 <h1>New Post</h1>
 <%= form_for @post do |f| %>
   <h3><%= f.label :title %></h3>
-  <%= f.text_field :title %>
-  <h3><%= f.label :author %></h3>
-  <%= f.text_field(:author, placeholder: " " + current_user.email) %>
+  <%= f.text_field(:title, :maxlength => "70", size: "60x1") %>
+  <h3><%= f.label :author %> <small> <%= current_user.email %></small></h3>
+  <%= f.text_field(:author, value: current_user.email, type: "hidden") %>
   <h3><%= f.label :body %></h3>
-  <%= f.text_area(:body, size: '60x8') %><br><br>
+  <%= f.text_area(:body, size: '60x8', :maxlength => "1600") %><br><br>
   <input id='user_id' name='user_id' type='hidden' value='<%= current_user.id() %>'>
 
   <button class="btn btn-primary btn-xs">Submit</button>

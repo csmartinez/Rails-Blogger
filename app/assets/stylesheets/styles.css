@@ -115,3 +115,7 @@ input {
   color: teal;
   font-family: arial;
 }
+
+a:hover {
+  color: white;
+}

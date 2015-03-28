@@ -2,11 +2,12 @@
   <h1><%= @post.title %> <small>by <%= @post.author %> <p class="smallish"><%= @post.created_at %></p></small></h1>
 
   <h4><%= @post.body %></h4>
-
-  <p><button class="btn btn-xs btn-primary"><span class="link"><%= link_to "Edit Post", edit_post_path(@post) %></span></button></p>
-  <p><button class="btn btn-xs btn-danger"><%= link_to "Delete", post_path(@post),
-                           :data => {:confirm => "You sure?",
-                                          :method => "delete"} %></button></p>
+  <% if current_user && @post.author === current_user.email %>
+    <p><button class="btn btn-xs btn-primary"><span class="link"><%= link_to "Edit Post", edit_post_path(@post) %></span></button></p>
+    <p><button class="btn btn-xs btn-danger"><%= link_to "Delete", post_path(@post),
+                             :data => {:confirm => "You sure?",
+                                            :method => "delete"} %></button></p>
+                                            <% end %>
 </div>
 <div class="column2">
   <% if @post.comments.any? %>
@@ -16,12 +17,13 @@
             <em>-<%= comment.author %></em><br>
           <% end %>
         <% end %>
+        
     <% if current_user %>
   <h3>New Comment</h3>
   <%= form_for @post.comments.new do |f| %>
-    <h5><%= f.text_field(:comment, size: '31x2', placeholder: " Enter text here...") %></h5>
-    <h5>-<%= current_user.email %></h5>
-    <%= f.text_field(:author, placeholder: " " + current_user.email, size: '20x1', value: current_user.email, type: "hidden") %>
+    <h5><%= f.text_area(:comment, size: '31x3', placeholder: " Enter text here...", :maxlength => "385") %></h5>
+    <h4><small>-<%= current_user.email %></small></h4>
+    <%= f.text_field(:author, value: current_user.email, type: "hidden") %>
     <input id='post_id' name='post_id' type='hidden' value='<%= @post.id() %>'>
     <button class="btn btn-xs btn-warning">Enter comment</button>
   <% end %>
