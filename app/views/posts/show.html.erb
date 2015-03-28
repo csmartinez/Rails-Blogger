@@ -16,11 +16,15 @@
             <em>-<%= comment.author %></em><br>
           <% end %>
         <% end %>
+    <% if current_user %>
   <h3>New Comment</h3>
   <%= form_for @post.comments.new do |f| %>
     <h5><%= f.text_field(:comment, size: '23x2', placeholder: " Enter text here...") %></h5>
     <h5><%= f.text_field(:author, placeholder: " " + current_user.email, size: '20x1') %></h5>
     <input id='post_id' name='post_id' type='hidden' value='<%= @post.id() %>'>
     <button class="btn btn-xs btn-warning">Enter comment</button>
+  <% end %>
+    <% else %>
+    <h3><a href="/">Log in</a> to comment</h3>
   <% end %>
 </div>
